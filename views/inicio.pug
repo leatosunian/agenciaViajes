@@ -1,0 +1,42 @@
+extends ./layout/index
+
+block slider 
+    .slider 
+        h1 Rio de Janerio 
+        em aventura 
+
+
+block contenido
+    main.container.mt-5
+        h2.text-center.mb-5 Sobre Nosotros
+        .row.mb-5 
+            .col-md-6 
+                p Fusce porttitor purus at aliquam cursus. Proin quam urna, venenatis eget ligula a, elementum hendrerit turpis. Suspendisse quis orci ipsum. Aliquam gravida mauris at nulla fringilla, eget mollis velit tempus. In sodales urna enim, nec facilisis felis cursus a. Nulla eros tellus, vulputate nec metus vitae, maximus dignissim elit. Sed vulputate risus id tristique elementum. Vestibulum quis lacus elit.
+                p Nam id vehicula enim. Nunc sed neque mauris. In scelerisque, lorem in tempor sagittis, lacus nisl interdum ipsum, at elementum nisi tortor in nisi. Praesent congue laoreet neque non fermentum. Mauris bibendum arcu justo, eu aliquet tellus ornare at. Fusce bibendum diam neque, eget bibendum mi ultricies vel. Phasellus sodales et orci vestibulum ultrices.
+
+            .col-md-6.justify-content-center
+                img(src="/img/inicio_nosotros.jpg", alt="imagen inicio", class= 'img-fluid')
+        
+        include ./layout/bloqueviajes
+
+    .descuento 
+        .container 
+            .row 
+                .col-md-6 
+                    .contenido 
+                        h3 5% de Descuento 
+                        p.titulo Viaje a Canadá
+                        p.fecha 20 de marzo, 2022
+                        p.precio USD 2500
+
+    blockquote.text-center.mt-5 Leé las opiniones de nuestros clientes!
+        .row.testimoniales.text-center.m-4
+            each testimonio in testimonios 
+                .col-md-6.col-lg-4.mb-4 
+                    .card 
+                        .card-body
+                            blockquote.blockquote
+                            p.mb-0
+                                | #{testimonio.mensaje}
+                            footer.blockquote-footer 
+                                | #{testimonio.nombre}
